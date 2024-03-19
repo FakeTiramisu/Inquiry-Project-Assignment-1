@@ -22,6 +22,10 @@ body {
     font-family: "Karla", sans-serif;
 }
 
+#headertitle {
+    color:#5f43b2;
+}
+
 /* Logo and the logo image */
 .header-main-logo {
     width: fit-content;

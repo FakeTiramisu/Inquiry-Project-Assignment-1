@@ -1,1 +1,32 @@
+.header h1 {
+    color: #fefdfd;
+    font-size: 40px;
+}
 
+.header {
+    padding: 80px;
+    text-align: left;
+    background: #3a3153;
+    color: #fefdfd;
+}
+
+/* Stylising the navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #5f43b2;
+}
+
+/* Navigation bar: links */
+.navbar a{
+    float: left;
+    display: block;
+    color: #fefdfd;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Navigation bar:  */
+.navbar a:hover {
+    opacity: 50;
+}

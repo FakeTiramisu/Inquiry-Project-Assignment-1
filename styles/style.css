@@ -2,7 +2,7 @@
     CSS Stylesheet for Assignment 1
 */
 
-/*Import Cool Fonts*/
+/* Import Cool Fonts */
 @import url(https://db.onlinewebfonts.com/c/b712c1dfca1bfc2e6d80b2c9d9c0c957?family=GT+Walsheim); 
 @import url(https://db.onlinewebfonts.com/c/750e3658d4460a397a551dfac26bb272?family=Karla);
 @import url(https://db.onlinewebfonts.com/c/16842c927f8ef77adc29f7c5e27929ca?family=GT+Pressura+Light);  
@@ -20,6 +20,10 @@ body {
     display: flex;
     justify-content: space-between;
     font-family: "Karla", sans-serif;
+}
+
+.headertitle{
+    color: #7ea0ff;
 }
 
 /* Logo and the logo image */

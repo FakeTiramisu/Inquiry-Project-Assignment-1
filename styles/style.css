@@ -156,3 +156,53 @@ footer{
     padding-left: 20px;
     color:#fefdfd;
 }
+
+
+/* my adjustments */
+
+.fieldset-content{
+    margin-top: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.fieldset_main{
+    background-color: #3d374e;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow:0 0 10px;
+}
+
+.fieldset_gender{
+    background-color: #373245;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow:0 0 10px;
+}
+
+legend{
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+.radio_button{
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+.button{
+    background-color: #b1aebb;
+    border: none;
+    color: black;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 2px solid #7ea0ff;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: #7ea0ff; /* Green */
+    color: black;
+}

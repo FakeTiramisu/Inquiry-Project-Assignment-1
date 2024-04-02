@@ -22,6 +22,16 @@ p{
     color: #fefdfd;
 }
 
+aside{
+    width: 25%;
+    float: right;
+    border: 1px;
+    border-left-style: solid;
+    border-left-color: #b1aebb;
+    border-left-width: 5px;
+}
+
+
 /* Stylise the header of the page */
 .header-main {
     width: 100%;
@@ -227,7 +237,6 @@ legend{
 
 .jobs_sidepanel {
     height: 800px;
-    width: 400px;
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 1;
@@ -239,6 +248,12 @@ legend{
     box-shadow: 0 0 10px; 
 } 
 
+.job_info {
+    font-family:"Karla", sans-serif;
+    list-style-type: upper-roman ;
+    margin: 10px;
+    padding: 10px;
+}
 
 .jobs_mainpanel {
     height: 800px;
@@ -253,6 +268,7 @@ legend{
     overflow: auto;
 }
 
+/*Testimonials Styling*/
 .jobs_testimonials { 
     grid-column-start: 1;
     grid-column-end: 4;
@@ -297,20 +313,10 @@ legend{
     grid-column-end: 4;
     width: 100%;
 }
-
-aside{
-    width: 25%;
-    float: right;
-    border: 1px;
-    border-left-style: solid;
-    border-left-color: #b1aebb;
-    border-left-width: 5px;
-}
-
 .contact_info {
     font-family:"Karla", sans-serif;
     list-style-type: none;
     margin: 10px;
     padding: 10px;
-
+    color: #b1aebb;
 }

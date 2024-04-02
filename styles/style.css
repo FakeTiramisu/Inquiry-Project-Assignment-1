@@ -206,3 +206,111 @@ legend{
     background-color: #7ea0ff; /* Green */
     color: black;
 }
+
+/* Jobs Page Stylization */
+
+.jobs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100,1fr));
+    grid-auto-rows: repeat(auto-fit, minmax(100,1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: baseline;
+}
+
+.jobs_header { 
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1; 
+    grid-row-end: 2;  
+}
+
+.jobs_sidepanel {
+    height: 800px;
+    width: 400px;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #b1aebb; 
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px; 
+} 
+
+
+.jobs_mainpanel {
+    height: 800px;
+    overflow-y: 100px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: #b1aebb;
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px;
+    overflow: auto;
+}
+
+.jobs_testimonials { 
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: #b1aebb; 
+    padding: 9px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px;    
+}
+.flex_container{
+    display: flex;
+    gap: 10px;
+}
+
+.flex_item { 
+    flex: 1;
+    background-color:#b1aebb;
+}
+
+.flex_item1 { 
+    flex: 1; 
+    flex-direction: row;
+    background-color:#b1aebb;
+}
+.flex_item2 { 
+    flex: 1; 
+    background-color: #b1aebb;
+}
+
+.flex_item3 { 
+    flex: 1; 
+    background-color: #b1aebb;
+}
+
+/* Footer stylisation */
+.ync_footer{
+    background-color: #373153;
+    flex: 1;
+    grid-column-start: 1; 
+    grid-column-end: 4;
+    width: 100%;
+}
+
+aside{
+    width: 25%;
+    float: right;
+    border: 1px;
+    border-left-style: solid;
+    border-left-color: #b1aebb;
+    border-left-width: 5px;
+}
+
+.contact_info {
+    font-family:"Karla", sans-serif;
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+
+}

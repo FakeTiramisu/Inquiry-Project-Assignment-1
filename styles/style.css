@@ -14,6 +14,7 @@ description: index.html about.html enhancements.html apply.html jobs.html
 /* Stylising the body of the page */
 body {
     background-color: #3a3153;
+    margin: 0;
 }
 
 h1, h2, h3{
@@ -44,7 +45,6 @@ header {
     padding: 18px 0;
     width: 100%;
     height: 60px;
-    background-color: #3a3153;
     display: flex;
     justify-content: space-between;
     font-family: "Karla", sans-serif;
@@ -126,7 +126,7 @@ nav ul li:hover {
 
 /* Stylising the main content of the header */
 main {
-    padding: 50px;
+    padding: 40px;
     text-align: left;
     color: #fefdfd;
 }
@@ -146,6 +146,13 @@ main p {
     font-family: "Karla", sans-serif;
 }
 
+#main-top{
+    background: rgb(80,26,176);
+    background: linear-gradient(157deg, rgba(80,26,176,1) 25%, rgba(37,2,82,1) 50%, rgba(65,3,110,1) 66%, rgba(65,3,110,1) 100%); 
+    padding: 3em;
+    margin: -40px;
+}
+
 #intro-image {
     float: right;
     width: 40%;
@@ -154,8 +161,29 @@ main p {
 /* Stylising the service section */
 #service-top {
     font-size: 30px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 20px;
+}
+
+#careers{
+    text-align: center;
+    border: 4px inset #684bc0;
+    background: url('images/background-pic2.jpg');
+    background-position: center;
+    border-radius: 14px;
+    margin: 2.5em 1em;
+    padding: 2em;
+}
+
+#careers p {
+    padding: 1em;
+}
+
+/* ABOUT PAGE */
+/* Top of the page */
+
+#about-us h1{
+    font-size: 44px;
 }
 
 /* Stylising timetable */

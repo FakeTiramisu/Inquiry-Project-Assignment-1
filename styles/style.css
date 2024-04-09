@@ -1,5 +1,9 @@
 /*
-    CSS Stylesheet for Assignment 1
+filename: style.css
+authors: Yoojin Ahn, Ned Tonks, Charmaigne Mamaril
+created: 20/03/2024
+last modified: 10/04/2024
+description: index.html about.html enhancements.html apply.html jobs.html
 */
 
 /* Import Cool Fonts */
@@ -33,7 +37,7 @@ aside{
 
 
 /* Stylise the header of the page */
-.header-main {
+header {
     width: 100%;
     height: 60px;
     background-color: #3a3153;
@@ -78,24 +82,24 @@ a.contact:hover{
 }
 
 /* Stylise the navigation bar */
-.header-main-nav {
+nav {
     width: fit-content;
     height: 100%;
 }
 
-.header-main-nav ul {
+nav ul {
     
     margin-left: 30px;
 }
 
-.header-main-nav ul li{
+nav ul li{
     list-style: none;
     display: inline;
     float: left;
     transition: 0.5s;
 } 
 
-.header-main-nav ul li a{
+nav ul li a{
     padding: 0 25px;
     font-size: 20px;
     text-decoration: none;
@@ -105,12 +109,12 @@ a.contact:hover{
 }
 
 /* Extra animation on navigation bar */
-.header-main-nav ul:hover li {
+nav ul:hover li {
     opacity: 0.2;
     filter: blur(2px);
 }
 
-.header-main-nav ul li:hover {
+nav ul li:hover {
     opacity: 1;
     filter: blur(0px);
 }

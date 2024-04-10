@@ -227,6 +227,10 @@ dd {
     color: #7ea0ff;
 }
 
+#team figure {
+    border: 1px #24222b;
+}
+
 #profile1, #profile2, #profile3 {
     float: left;
     width: 30%;
@@ -248,6 +252,7 @@ table, tr, td {
 
 table {
     width: 100%;
+    align-items: center;
     table-layout: fixed;
     font-family: "Karla", sans-serif;
 }

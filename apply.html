@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="YNC Finance Software | Do Your Finance Right" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="author"   cotent="Yoojin Ahn" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Apply | YNC Finance Group</title>
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-    <p>
-        <img src="YNC_logo.png" alt="YNC Logo" style="width:10%;height:10%;" />
-    </p>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="jobs.html">Jobs</a></li>
-            <li><a href="apply.html">Apply Now</a></li>
-            <li><a href="about.html" class="right">About Us</a></li> 
-        </ul>       
-    </nav>
-    <fieldset >
+    <header>
+        <div class="header-main-logo">
+            <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="jobs.html">JOBS</a></li>
+                    <li><a href="apply.html">APPLY NOW</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="enhancements.html">ENHANCEMENTS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="mailto:104853318@student.swin.edu.au" class="contact-button">Contact Us</a>
+    </header>
+    <div class="fieldset-content">
+    <fieldset class="fieldset_main">
         <legend>Job application page</legend>
     <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php"> 
         <p><label for="Rnumber">Job reference number</label>
@@ -31,15 +42,15 @@
         <p><label for="DOB">Date of birth
             <input type="date" name="date of birth" id="DOB" required="required" />
         </label></p>
-        <fieldset>
+        <fieldset class="fieldset_gender">
             <legend>Gender:</legend>
-            <label for="Male">
+            <label class="radio_button" for="Male">
                 <input type="radio" name="gender" id="Male" value="Male" checked="checked" required="required" />Male
             </label>
-            <label for="Female">
+            <label class="radio_button" for="Female">
                 <input type="radio" name="gender" id="Female" value="Female" checked="checked" required="required" />Female
             </label>
-            <label for="Other">
+            <label class="radio_button" for="Other">
                 <input type="radio" name="gender" id="Other" value="Other" checked="checked" required="required"/>Other
             </label>
         </fieldset>
@@ -70,7 +81,7 @@
         <p><label for="Phone">Phone number
             <input type="tel" name="phone" id="Phone" minlength="8" maxlength="12" required="required"/>
         </label></p>
-        <p>Skill list <br/>
+        <p class="skill_list">Skill list <br/>
             <label for="skill1"><input type="checkbox" name="skills1" id="skill1" value="PS" required="required"/>Problem Solving</label>
             <label for="skill2"><input type="checkbox" name="skills2" id="skill2" value="Teamwork" />Teamwork</label>
             <label for="skill3"><input type="checkbox" name="skills3" id="skill3" value="Communication" />Communication</label>
@@ -80,11 +91,30 @@
         <input type="text" name="OSkills" id="OSkills"/>
        </label></p>
        <p>
-        <input type="submit" value="Apply"/>
-        <input type="reset" value="Reset" />
+        <input class="button" type="submit" value="Apply"/>
+        <input class="button" type="reset" value="Reset" />
        </p>
        
     </form>
 </fieldset>
+</div>
+<hr>
+<div class="ync_footer flex-container">
+    <footer>
+        <br>
+      <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"> </a>
+
+    <aside>
+        <h3> &nbsp; &nbsp;Contact Us</h3>
+    <ul class="contact_info">
+        <li>YNC Tech</li>
+        <li>John Street</li>
+        <li>Hawthorn, Victoria, 3123</li>
+        <li>Email: &nbsp; <a href="mailto:105179675@student.swin.edu.au">careers@yncgroup.com</a></li>
+        <li><a href="https://swinburne.edu.au" target="_blank">All Rights Reserved &copy; YNC Tech </a></li>
+    </ul>
+    </aside>
+    </footer>
+</div>
 </body>
 </html>

@@ -1,0 +1,395 @@
+/*
+filename: style.css
+authors: Yoojin Ahn, Ned Tonks, Charmaigne Mamaril
+created: 20/03/2024
+last modified: 10/04/2024
+description: index.html about.html enhancements.html apply.html jobs.html
+*/
+
+/* Import Cool Fonts */
+@import url(https://db.onlinewebfonts.com/c/b712c1dfca1bfc2e6d80b2c9d9c0c957?family=GT+Walsheim); 
+@import url(https://db.onlinewebfonts.com/c/750e3658d4460a397a551dfac26bb272?family=Karla);
+@import url(https://db.onlinewebfonts.com/c/16842c927f8ef77adc29f7c5e27929ca?family=GT+Pressura+Light);  
+
+/* Stylising the body of the page */
+body {
+    background-color: #3a3153;
+    margin: 0;
+}
+
+h1, h2, h3{
+    font-family: "GT Walsheim";
+    color:#fefdfd;
+}
+
+p{
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+aside{
+    width: 25%;
+    float: right;
+    border: 1px;
+    border-left-style: solid;
+    border-left-color: #b1aebb;
+    border-left-width: 5px;
+}
+
+#highlight {
+    color: #7ea0ff;
+}
+
+/* Stylise the header of the page */
+header {
+    padding: 18px 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Karla", sans-serif;
+}
+
+.headertitle{
+    color: #7ea0ff;
+}
+
+/* Logo and the logo image */
+.header-main-logo {
+    width: fit-content;
+    height: 100%;
+    padding-left: 60px;
+    display: flex;
+}
+
+.header-main-logo img {
+    height: 60px;
+    align-self: center;
+}
+
+/* Styalising email button */
+.contact-button {
+    box-sizing: border-box;
+    text-align: auto;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 20px 20px;
+    background-color: #7ea0ff;
+    color:#fefdfd;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+a.contact-button:hover{
+    background-color: #5174d5;
+}
+
+/* Stylise the navigation bar */
+nav {
+    width: fit-content;
+    height: 100%;
+}
+
+nav ul {
+    
+    margin-left: 30px;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline;
+    float: left;
+    transition: 0.5s;
+} 
+
+nav ul li a{
+    padding: 0 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #fefdfd;
+    display: block;
+    height: 100%;
+}
+
+/* Extra animation on navigation bar */
+nav ul:hover li {
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+nav ul li:hover {
+    opacity: 1;
+    filter: blur(0px);
+}
+
+/* Stylising the main content of the header */
+main {
+    padding: 40px;
+    text-align: left;
+    color: #fefdfd;
+}
+
+main h1 {
+    font-size: 60px;
+    font-family: "GT Walsheim", sans-serif;
+}
+
+main h2 {
+    color: #b1aebb;
+    font-family: "GT Pressura Light", sans-serif;
+}
+
+main p {
+    font-size: 20px;
+    font-family: "Karla", sans-serif;
+}
+
+#main-top{
+    background: rgb(80,26,176);
+    background: linear-gradient(157deg, rgba(80,26,176,1) 25%, rgba(37,2,82,1) 50%, rgba(65,3,110,1) 66%, rgba(65,3,110,1) 100%); 
+    padding: 3em;
+    margin: -40px;
+}
+
+#intro-image {
+    float: right;
+    width: 40%;
+}
+
+/* Stylising the service section */
+#service-top {
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#careers{
+    text-align: center;
+    border: 4px inset #684bc0;
+    background: url('images/background-pic2.jpg');
+    background-position: center;
+    border-radius: 14px;
+    margin: 2.5em 1em;
+    padding: 2em;
+}
+
+#careers p {
+    padding: 1em;
+}
+
+/* ABOUT PAGE */
+/* Top of the page */
+
+#about-us h1{
+    font-size: 44px;
+}
+
+/* Stylising timetable */
+#timetable {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+th {
+    color: #5f43b2;
+}
+
+td{
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+}
+
+/* Figure Style */
+figure img{
+    width: 10%
+}
+
+
+/* my adjustments */
+
+.fieldset-content{
+    margin-top: 80px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.fieldset_main{
+    background-color: #3d374e;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow:0 0 10px;
+}
+
+.fieldset_gender{
+    background-color: #373245;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow:0 0 10px;
+}
+
+legend{
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+.radio_button{
+    font-family: "Karla", sans-serif;
+    color: #fefdfd;
+}
+
+.button{
+    background-color: #b1aebb;
+    border: none;
+    color: black;
+    padding: 7px 15px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Karla", sans-serif;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 2px solid #7ea0ff;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: #7ea0ff; /* Green */
+    color: black;
+}
+
+/* Jobs Page Stylization */
+
+.jobs_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100,1fr));
+    grid-auto-rows: repeat(auto-fit, minmax(100,1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: baseline;
+}
+
+.jobs_header { 
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1; 
+    grid-row-end: 2;  
+}
+
+.jobs_sidepanel {
+    height: 800px;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #b1aebb; 
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px; 
+} 
+
+.job_info {
+    font-family:"Karla", sans-serif;
+    list-style-type: upper-roman ;
+    margin: 10px;
+    padding: 10px;
+}
+
+.jobs_mainpanel {
+    height: 800px;
+    overflow-y: 100px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: #b1aebb;
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px;
+    overflow: auto;
+}
+
+/*Testimonials Styling*/
+.jobs_testimonials { 
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: #b1aebb; 
+    padding: 9px 15px;
+    margin-bottom: 10px;
+    font-family: "Karla", sans-serif; 
+    box-shadow: 0 0 10px;    
+}
+.flex_container{
+    display: flex;
+    gap: 10px;
+}
+
+.flex_item { 
+    flex: 1;
+    background-color:#b1aebb;
+}
+
+.flex_item1 { 
+    flex: 1; 
+    flex-direction: row;
+    background-color:#b1aebb;
+}
+.flex_item2 { 
+    flex: 1; 
+    background-color: #b1aebb;
+}
+
+.flex_item3 { 
+    flex: 1; 
+    background-color: #b1aebb;
+}
+
+hr {
+    color:#b1aebb;
+    border: 2px solid  #b1aebb;
+}
+
+/* Footer stylisation */
+.ync_footer{
+    background-color: #3a3153;
+    flex: 1;
+    grid-column-start: 1; 
+    grid-column-end: 4;
+    width: 100%;
+}
+
+.ync_footer footer img{
+    width: 150px;
+    height: auto;
+}
+
+.contact_info {
+    background-color: #24222b;
+    font-family:"Karla", sans-serif;
+    list-style-type: none;
+    margin: 10px;
+    padding: 20px;
+    color: #b1aebb;
+}
+
+.contact_info li:last-child {
+    padding-top: 10px;
+
+}
+
+.contact_info li:last-child a{
+    padding-top: 10px;
+    color: #fefdfd;
+
+}
+
+.contact_info li a:link {
+    color: #5174d5;
+}

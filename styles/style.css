@@ -4,6 +4,7 @@ authors: Yoojin Ahn, Ned Tonks, Charmaigne Mamaril
 created: 20/03/2024
 last modified: 10/04/2024
 description: index.html about.html enhancements.html apply.html jobs.html
+purpose: stylesheet for YNC website for assignment 1
 */
 
 /* Import Cool Fonts */
@@ -11,7 +12,7 @@ description: index.html about.html enhancements.html apply.html jobs.html
 @import url(https://db.onlinewebfonts.com/c/750e3658d4460a397a551dfac26bb272?family=Karla);
 @import url(https://db.onlinewebfonts.com/c/16842c927f8ef77adc29f7c5e27929ca?family=GT+Pressura+Light);  
 
-/* Stylising the body of the page */
+/* General Body and Header styles */
 body {
     background-color: #4d3e79;
     margin: 0;
@@ -27,19 +28,11 @@ p{
     color: #fefdfd;
 }
 
-aside{
-    width: 25%;
-    float: right;
-    border: 1px;
-    border-left-style: solid;
-    border-left-color: #b1aebb;
-    border-left-width: 5px;
-}
-
 #highlight {
     color: #7ea0ff;
 }
 
+/* HEADER */
 /* Stylise the header of the page */
 header {
     padding: 18px 0;
@@ -67,7 +60,7 @@ header {
     align-self: center;
 }
 
-/* Styalising email button */
+/* Email Button on the Header Menu */
 .contact-button {
     box-sizing: border-box;
     text-align: auto;
@@ -86,7 +79,7 @@ a.contact-button:hover{
     background-color: #5174d5;
 }
 
-/* Stylise the navigation bar */
+/* Navigation Bar */
 nav {
     width: fit-content;
     height: 100%;
@@ -124,7 +117,8 @@ nav ul li:hover {
     filter: blur(0px);
 }
 
-/* Stylising the main content of the header */
+/* BODY */
+/* Main content of Index.html */
 main {
     padding: 40px;
     text-align: left;
@@ -153,12 +147,13 @@ main p {
     margin: -40px;
 }
 
+/* Image png in the index.html */
 #intro-image {
     float: right;
     width: 40%;
 }
 
-/* Stylising the service section */
+/* Stylising the "Our Services" section */
 #service-top {
     font-size: 30px;
     padding-top: 20px;
@@ -187,7 +182,7 @@ main p {
     margin: 30px;
 }
 
-/* Stylising definition list */
+/* Definition List */
 #group-details {
     padding: 10px;
 }
@@ -221,14 +216,11 @@ dd {
 #team img{
     height: 200px;
     width: auto;
+    border: 5px solid #24222b;
 }
 
 #team h3 {
     color: #7ea0ff;
-}
-
-#team figure {
-    border: 1px #24222b;
 }
 
 #profile1, #profile2, #profile3 {
@@ -275,9 +267,8 @@ td{
     text-align: center;
 }
 
-
-/* my adjustments */
-
+/* APPLY PAGE */
+/* fieldsets */
 .fieldset-content{
     margin-top: 80px;
     margin-left: 60px;
@@ -303,6 +294,7 @@ legend{
     color: #fefdfd;
 }
 
+/* Radio Buttons */
 .radio_button{
     font-family: "Karla", sans-serif;
     color: #fefdfd;
@@ -328,8 +320,7 @@ legend{
     color: black;
 }
 
-/* Jobs Page Stylization */
-
+/* JOB PAGE */
 .jobs_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100,1fr));
@@ -379,7 +370,7 @@ legend{
     overflow: auto;
 }
 
-/*Testimonials Styling*/
+/* Testimonials Styling */
 .jobs_testimonials { 
     grid-column-start: 1;
     grid-column-end: 4;
@@ -421,13 +412,37 @@ hr {
     border: 2px solid  #b1aebb;
 }
 
-/* Footer stylisation */
+/* YOUTUBE LINK */
+#youtube{
+    text-align: center;
+}
+
+/* ENHANCEMENTS */
+.resource a {
+    font-family: "Karla", sans-serif;
+}
+
+.resource a:visited {
+    color:#5174d5;
+}
+
+/* FOOTER */
 .ync_footer{
     background-color: #4d3e79;
     flex: 1;
     grid-column-start: 1; 
     grid-column-end: 4;
     width: 100%;
+}
+
+/* Footer: Contact details */
+aside{
+    width: 25%;
+    float: right;
+    border: 1px;
+    border-left-style: solid;
+    border-left-color: #b1aebb;
+    border-left-width: 5px;
 }
 
 .ync_footer footer img{

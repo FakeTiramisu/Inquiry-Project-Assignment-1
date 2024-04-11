@@ -13,6 +13,10 @@ purpose: stylesheet for YNC website for assignment 1
 @import url(https://db.onlinewebfonts.com/c/16842c927f8ef77adc29f7c5e27929ca?family=GT+Pressura+Light);  
 
 /* General Body and Header styles */
+* {
+    font-family: "Karla", sans-serif;
+}
+
 body {
     background-color: #4d3e79;
     margin: 0;
@@ -30,6 +34,20 @@ p{
 
 #highlight {
     color: #7ea0ff;
+}
+
+dt {
+    clear: left;
+    float: left;
+    font-weight: bold;
+}
+
+dt::after {
+    content: ": ";
+}
+
+dd {
+    width: 50%;
 }
 
 /* HEADER */
@@ -147,6 +165,7 @@ main p {
     margin: -40px;
 }
 
+/* HOME PAGE */
 /* Image png in the index.html */
 #intro-image {
     float: right;
@@ -174,6 +193,13 @@ main p {
     padding: 1em;
 }
 
+#service1, #service2, #service3 {
+    float: left;
+    width: 30%;
+    text-align: justify;
+    margin: 1em 1em 1em 1em;
+}
+
 /* ABOUT PAGE */
 /* Top of the page */
 
@@ -182,52 +208,56 @@ main p {
     margin: 30px;
 }
 
+/* Floating figure images */
+#group-image img{
+    height: 150px;
+    width: auto;
+    border: 5px double #5174d5;
+    box-shadow: 10px 10px 8px #24222bc4;
+}
+
+#group-image figure {
+    display: inline-block;
+}
+
+#group-image {
+    margin: auto;
+    padding: 1em;
+    width: 40%;
+    float: right;
+    text-align: center;
+}
+
 /* Definition List */
 #group-details {
     padding: 10px;
+    width: 50%;
 }
 
 #group-details h2{
     font-weight: bold;
 }
 
-dl {
-    font-family: "Karla", sans-serif;
+#group-details dl {
+    background: url('images/background-pic2.jpg');
     font-size: 20px;
     border: 3px double #ccc;
     padding: 1em;
 }
 
-dt {
-    clear: left;
-    float: left;
+#group-details dt {
+    color: #5174d5;
     width: 40%;
     text-align: right;
-    font-weight: bold;
-    color: #5174d5;
 }
 
-dd {
-    width: 55%;
-	margin-left: 42%;
-}
+#group-details dd {
+    margin-left: 42%;
+} 
 
 /* Team Details */
-#team img{
-    height: 200px;
-    width: auto;
-    border: 5px solid #24222b;
-}
-
 #team h3 {
     color: #7ea0ff;
-}
-
-#profile1, #profile2, #profile3 {
-    float: left;
-    width: 30%;
-    text-align: justify;
-    margin: 1em 1em 1em 1em;
 }
 
 /* Align contact information */
@@ -418,12 +448,8 @@ hr {
 }
 
 /* ENHANCEMENTS */
-.resource a {
-    font-family: "Karla", sans-serif;
-}
-
-.resource a:visited {
-    color:#5174d5;
+.resource {
+    padding: 10px;
 }
 
 /* FOOTER */
@@ -436,7 +462,7 @@ hr {
 }
 
 /* Footer: Contact details */
-aside{
+#footer-contact{
     width: 25%;
     float: right;
     border: 1px;

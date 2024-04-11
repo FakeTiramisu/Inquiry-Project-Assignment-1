@@ -81,7 +81,6 @@ header {
 /* Email Button on the Header Menu */
 .contact-button {
     box-sizing: border-box;
-    text-align: auto;
     text-decoration: none;
     margin-right: 20px;
     padding: 20px 20px;

@@ -175,22 +175,9 @@ main p {
 /* Stylising the "Our Services" section */
 #service-top {
     font-size: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#careers{
+    padding-top: 50px;
+    padding-bottom: 0px;
     text-align: center;
-    border: 4px inset #684bc0;
-    background: url('images/background-pic2.jpg');
-    background-position: center;
-    border-radius: 14px;
-    margin: 2.5em 1em;
-    padding: 2em;
-}
-
-#careers p {
-    padding: 1em;
 }
 
 #service1, #service2, #service3 {
@@ -200,11 +187,35 @@ main p {
     margin: 1em 1em 1em 1em;
 }
 
+#service1 h3, #service2 h3, #service3 h3 {
+    color: rgb(196, 196, 22);
+}
+
+#careers{
+    clear: both;
+    text-align: center;
+    border: 4px inset #684bc0;
+    background: url('images/background-pic2.jpg');
+    background-position: center;
+    box-shadow: 9px 9px 5px #24222b;
+    border-radius: 14px;
+    margin: 2.5em 10em;
+    padding: 2em;
+}
+
+#careers p {
+    padding: 1em;
+}
+
+#careers h1 {
+    font-size: 45px;
+}
+
+
 /* ABOUT PAGE */
 /* Top of the page */
-
 #about-us h1{
-    font-size: 45px;
+    font-size: 50px;
     margin: 30px;
 }
 
@@ -258,6 +269,10 @@ main p {
 /* Team Details */
 #team h3 {
     color: #7ea0ff;
+    padding-top: 26px;
+}
+#team p {
+    width: 70%;
 }
 
 /* Align contact information */
@@ -444,12 +459,40 @@ hr {
 
 /* YOUTUBE LINK */
 #youtube{
+    padding: 15px;
     text-align: center;
+    font-size: 23px;
+}
+
+#youtube a{
+    text-decoration: none;;
+    background-color: #684bc0;
+    border-radius: 8px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 16px 16px;
+    
+}
+
+#youtube a:hover{
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    animation:slidebg 5s linear infinite;
+    color: #2e2d30;
+}
+
+@keyframes slidebg {
+    to {
+      background-position:35vw;
+    }
 }
 
 /* ENHANCEMENTS */
 .resource {
     padding: 10px;
+}
+
+.resource p {
+    padding: 13px 0;
 }
 
 /* FOOTER */

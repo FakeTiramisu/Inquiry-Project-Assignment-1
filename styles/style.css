@@ -2,7 +2,7 @@
 filename: style.css
 authors: Yoojin Ahn, Ned Tonks, Charmaigne Mamaril
 created: 20/03/2024
-last modified: 10/04/2024
+last modified: 11/04/2024
 description: index.html about.html enhancements.html apply.html jobs.html
 purpose: stylesheet for YNC website for assignment 1
 */
@@ -393,6 +393,13 @@ legend{
     grid-column-end: 4;
     grid-row-start: 1; 
     grid-row-end: 2;  
+    margin-left: 15px;
+    padding: 25px; 
+}
+
+.jobs_headertitle {
+    color: #7ea0ff;
+    font-size: 60px;
 }
 
 .jobs_sidepanel {
@@ -403,15 +410,23 @@ legend{
     grid-column-end: 2;
     background-color: #b1aebb; 
     padding: 7px 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     margin-bottom: 10px;
     font-family: "Karla", sans-serif; 
     box-shadow: 0 0 10px; 
 } 
 
+.jobs_title{
+    color: #7ea0ff;
+    font-variant: inherit;
+}
+
 .job_info {
     font-family:"Karla", sans-serif;
     list-style-type: upper-roman ;
     margin: 10px;
+    margin-right: 15px;
     padding: 10px;
 }
 
@@ -423,10 +438,13 @@ legend{
     background-color: #b1aebb;
     padding: 7px 15px;
     margin-bottom: 10px;
+    margin-right: 15px;
     font-family: "Karla", sans-serif; 
     box-shadow: 0 0 10px;
     overflow: auto;
 }
+
+
 
 /* Testimonials Styling */
 .jobs_testimonials { 
@@ -437,6 +455,8 @@ legend{
     background-color: #b1aebb; 
     padding: 9px 15px;
     margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
     font-family: "Karla", sans-serif; 
     box-shadow: 0 0 10px;    
 }

@@ -1001,7 +1001,6 @@ legend{
 .jobs_p {
     font-family: "Karla", sans-serif;
     color: #FFFFFF; 
-    padding: 10px;
     text-shadow:  1px 1px 2px black;
 }
 
@@ -1019,7 +1018,7 @@ legend{
     font-family: "Karla", sans-serif;
     color:#FFFFFF;
     font-style: italic;
-    font-size: medium;
+    font-size: small;
     text-shadow:  1px 1px 2px black;
 }
 

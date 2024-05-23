@@ -199,12 +199,12 @@ main p {
 }
 
 #service1, #service2, #service3 {
-    float: left;
+    float: center;
     width: 25%;
     text-align: justify;
     margin: 1em 1em 4em 1em;
     box-shadow: 7px 7px 8px #24222b;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border: 5px solid #5f43b2;
     background-color: #5f43b2;
     position: relative;
@@ -212,7 +212,7 @@ main p {
 
 #service1:hover, #service2:hover, #service3:hover {
     background-color: #5f43b298;
-    border: 5px solid #5f43b298;
+    border: 2px solid #5f43b298;
     transition-duration: 0.5s;
 
 }

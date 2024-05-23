@@ -13,21 +13,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-main-logo">
-            <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="jobs.html">JOBS</a></li>
-                    <li><a href="apply.html">APPLY NOW</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="enhancements.html">ENHANCEMENTS</a></li>
-                </ul>
-            </nav>
-        </div>
-        <a href="mailto:104853318@student.swin.edu.au" class="contact-button">Contact Us</a>
-    </header>
+<?php include_once "header.inc";?>
 
 <div class="jobs_container">
 
@@ -77,7 +63,7 @@
             <li>Enthusiasm for high-quality code that is well documented, and thoroughly tested</li>
             <li>Familiarity with Agile software development methodologies is preferred</li>
         </ul>
-        <a class="button" href="apply.html"> Apply Here</a>
+        <a class="button" href="apply.php"> Apply Here</a>
         <br> 
         </section>
     <hr>
@@ -105,7 +91,7 @@
                 <li>Prior experience with billing systems is preferred</li>
                 <li>Familiarity with Agile software development methodologies is preferred</li>
             </ul>
-            <a class="button" href="apply.html"> Apply Here</a>
+            <a class="button" href="apply.php"> Apply Here</a>
         </section>
     <hr>
 
@@ -134,7 +120,7 @@
                 <li>Enthusiasm for high-quality code that is well documented, and thoroughly tested</li>
                 <li>Familiarity with Agile software development methodologies is preferred</li>
             </ul>
-            <a class="button" href="apply.html"> Apply Here</a>
+            <a class="button" href="apply.php"> Apply Here</a>
             <hr>
         </section>
     </div>
@@ -167,25 +153,7 @@
     
         </div>
     </div>
-    
-
-<div class="ync_footer flex-container">
-    <footer>
-        <br>
-      <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon" width=170 height=40> </a>
-
-    <aside id="footer-contact">
-        <h3> &nbsp; &nbsp;Contact Us</h3>
-    <ul class="contact_info">
-        <li>YNC Tech</li>
-        <li>John Street</li>
-        <li>Hawthorn, Victoria, 3123</li>
-        <li>Email: &nbsp; <a href="mailto:105179675@student.swin.edu.au">careers@yncgroup.com</a></li>
-        <li><a href="https://swinburne.edu.au" target="_blank">All Rights Reserved &copy; YNC Tech </a></li>
-    </ul>
-    </aside>
-</footer>
-</div>
+    <?php include_once "footer.inc";?>
 </body>
 </html>
 

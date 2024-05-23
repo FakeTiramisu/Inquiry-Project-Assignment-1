@@ -11,21 +11,7 @@
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-    <header>
-        <div class="header-main-logo">
-            <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="jobs.html">JOBS</a></li>
-                    <li><a href="apply.html">APPLY NOW</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="enhancements.html">ENHANCEMENTS</a></li>
-                </ul>
-            </nav>
-        </div>
-        <a href="mailto:104853318@student.swin.edu.au" class="contact-button">Contact Us</a>
-    </header>
+    <?php include_once "header.inc";?>
     <main>
         <article class="resource">
             <h2>Enhancement 1: Gradient Background</h2>
@@ -34,7 +20,7 @@
                 gradients using color rgb() element. The code implemented was the linear-graient() function
                 with the lines slanted 157 degrees to create a more dynamic feel to the background.
             </p>
-            <a class="button" href="index.html">Go to the Enhancement</a>
+            <a class="button" href="index.php">Go to the Enhancement</a>
             <p>Resources for the Gradient Background</p>
             <a class="button" target="_blank" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-css-colors-by-building-a-set-of-colored-markers/step-56">Resource 1</a>
             <a class="button" target="_blank" href="https://cssgradient.io/">Resource 2</a>
@@ -46,7 +32,7 @@
                 our video submission.
                I used the @keyframe rule where animation gradually changes the colors in a rainbow pattern.
             </p>
-            <a class="button" href="index.html">Go to the Enhancement</a>
+            <a class="button" href="index.php">Go to the Enhancement</a>
             <p>Resources for the Gradient Background</p>
             <a class="button" target="_blank" href="https://www.w3schools.com/css/css3_animations.asp">Resource 1</a>
         </article>
@@ -56,29 +42,13 @@
                 Extra CSS was added to the stylesheet to support the grid layout and flexboxes within the grid. 
                 Particularly, a flex box was placed within the grid to organise 'Testimonials'
             </p>                                                                    
-            <a class="button" href="jobs.html"> Go to Enhancement</a>
+            <a class="button" href="jobs.php"> Go to Enhancement</a>
             <p>Resources used to make Grid and Flex boxes</p>   
             <a class="button" target="_blank" href="https://css-tricks.com/snippets/css/complete-guide-grid/">Resource 1</a>
             <a class="button" target="_blank" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Resource 2</a>
         </article>
     </main>
     <hr>
-    <div class="ync_footer flex-container">
-        <footer>
-            <br>
-        <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"> </a>
-
-        <aside id="footer-contact">
-            <h3> &nbsp; &nbsp;Contact Us</h3>
-        <ul class="contact_info">
-            <li>YNC Tech</li>
-            <li>John Street</li>
-            <li>Hawthorn, Victoria, 3123</li>
-            <li>Email: &nbsp; <a href="mailto:105179675@student.swin.edu.au">careers@yncgroup.com</a></li>
-            <li><a href="https://swinburne.edu.au" target="_blank">All Rights Reserved &copy; YNC Tech </a></li>
-        </ul>
-        </aside>
-        </footer>
-    </div>
+    <?php include_once "footer.inc";?>
 </body>
 </html>

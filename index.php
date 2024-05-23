@@ -11,21 +11,7 @@
     <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-    <header>
-        <div class="header-main-logo">
-            <a href="index.html"><img src="images/Logo.png" alt="YNC logo icon"></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="jobs.html">JOBS</a></li>
-                    <li><a href="apply.html">APPLY NOW</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    <li><a href="enhancements.html">ENHANCEMENTS</a></li>
-                </ul>
-            </nav>
-        </div>
-        <a href="mailto:104853318@student.swin.edu.au" class="contact-button">Contact Us</a>
-    </header>
+    <?php include_once "header.inc";?>
     <main>
         <section id="main-top">
             <div id="intro-image">
@@ -78,7 +64,7 @@
                 our mission of empowering individuals and businesses to achieve their 
                 financial goals.
             </p>
-            <a class="button" href="jobs.html">Explore Careers</a>
+            <a class="button" href="jobs.php">Explore Careers</a>
         </section>
         <!-- YOUTUBE LINK HERE -->
         <div id="youtube">
@@ -86,22 +72,6 @@
         </div>
     </main>
     <hr>
-    <div class="ync_footer flex-container">
-        <footer>
-            <br>
-            <img src="images/Logo.png" alt="YNC logo icon">
-    
-        <aside id="footer-contact">
-            <h3> &nbsp; &nbsp;Contact Us</h3>
-        <ul class="contact_info">
-            <li>YNC Tech</li>
-            <li>John Street</li>
-            <li>Hawthorn, Victoria, 3123</li>
-            <li>Email: &nbsp; <a href="mailto:105179675@student.swin.edu.au">careers@yncgroup.com</a></li>
-            <li><a href="https://swinburne.edu.au" target="_blank">All Rights Reserved &copy; YNC Tech </a></li>
-        </ul>
-        </aside>
-        </footer>
-    </div>
+    <?php include_once "footer.inc";?>
 </body>
 </html>

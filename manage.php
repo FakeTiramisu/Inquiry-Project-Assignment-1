@@ -21,6 +21,9 @@ include("menu.inc");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '<div class="container2">';
     echo '<h1>Manager Query Results</h1>';
+    echo '<form action="manage.php" method="post">';
+    echo '<button type="submit" class="return-button">Return</button>';
+    echo '</form>';
     require_once("settings.php");
 
     $connection = @mysqli_connect($host, $user, $pwd, $sql_db);
@@ -175,31 +178,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "</div>";
 } else {
     echo '
-    
+
     <div class ="jobs_container">
     <div class="jobs_header">
     <h1 class="jobs_headertitle">Careers Management Portal</h1>
     </div>
         <div class="jobs_sidepanel">
         <h1 class="jobs_title">Portal Search</h1>
-        <fieldset>
-            <legend>List all EOIs:</legend>
+        
+        <h2>List all EOIs:</h2>
             <form method="post" action="manage.php">
-                <input type="submit" name="button1" value="List all EOI"/>
+            <input type="submit" name="button1" value="List all EOI"/>
             </form>
-        </fieldset>
+        <hr>
 
-        <fieldset>
-        <legend>List according to job reference number:</legend>
+        
+        <h3>List according to job reference number:</h3>
         <form method="post" action="manage.php">
-            <p><label for="jID">Job reference number</label>
-            <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Must be valid Job number" required pattern="#[A-Z]{2}[0-9]{2}" />
+            <p><label for="jID">Job reference number</label><br><br>
+
+            <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Enter Job Ref. Number" required pattern="#[A-Z]{2}[0-9]{2}" />
+            <br><br>
             <input type="submit" name="button2" value="List all EOI for Reference number"/>
         </form>
-    </fieldset>
+        <hr>
 
-        <fieldset>
-            <legend>List EOIs by applicant name:</legend>
+
+        
+        <h3>List EOIs by applicant name:</h3>
             <form method="post" action="manage.php">
                 <p><label for="Fname">First name:</label>
                 <input type="text" name="Fname" id="Fname" pattern="[A-Za-z]+" maxlength="20" required/>
@@ -208,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <br><br>
                 <input type="submit" name="button3" value="List all EOIs for this applicant">
             </form>
-        </fieldset>
+            <hr>
 
          <fieldset>
             <legend>Logout</legend>
@@ -222,21 +228,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         <div class="jobs_mainpanel">
-        <h1 class="jobs_title">Update EOI panel</h1>
+        <h1 class="jobs_title">EOI Update panel</h1>
         
         
-
-        <fieldset>
-            <legend>Delete all EOIs for job reference number:</legend>
+        <h2>Delete all EOIs for job reference number</h2>
             <form method="post" action="manage.php">
-                <p><label for="jID">Job reference number</label>
+                <p><label for="jID">Job reference number</label> <br><br>
                 <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Must be valid Job number" required pattern="#[A-Z]{2}[0-9]{2}" />
+                <br><br>
                 <input type="submit" name="button4" value="Delete all EOIs for Reference number"/>
             </form>
-        </fieldset>
+        <hr>
+    
 
-        <fieldset>
-            <legend>Change status of an EOI</legend>
+    
+            <h3>Change status of an EOI</h3>
             <form method="post" action="manage.php">
                 <p><label for="EOInumber">EOI number</label>
                 <input type="text" name="EOInumber" id="EOInumber" required pattern="[0-9]+" />
@@ -250,7 +256,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </select>
                 <input type="submit" name="button5" value="Change status">
             </form>
-        </fieldset>
 
        
     </div>
@@ -258,5 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ';
 }
 ?>
+
+<?php include_once "footer.inc";?>
 </body>
 </html>

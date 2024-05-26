@@ -200,6 +200,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Enter Job Ref. Number" required pattern="#[A-Z]{2}[0-9]{2}" />
             <br><br>
             <input type="submit" name="button2" value="List all EOI for Reference number"/>
+
+            
         </form>
         <hr>
 
@@ -214,13 +216,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <br><br>
                 <input type="submit" name="button3" value="List all EOIs for this applicant">
             </form>
-            <hr>
-
-         <fieldset>
-            <legend>Logout</legend>
-            <form method="post" action="manage.php">
-                <input type="submit" name="button6" value="Logout">
-            </form>
+        <br> 
+        <br> 
+        <hr>
+        <br>
+        <br>
+        <a class="button" href="logout.php"> Log Out</a>
         </fieldset>
         </div>
 

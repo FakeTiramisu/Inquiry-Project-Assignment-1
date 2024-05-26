@@ -201,11 +201,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="jobs_sidepanel">
         <h1 class="jobs_title">Portal Search</h1>
         
-        <h2>List all EOIs:</h2>
             <form method="post" action="manage.php">
             <input type="submit" name="button1" value="List all EOI" class="button"/>
             </form>
-        <hr>
+
+        <br>
+
+        <br>
+        
 
         
         <h2>List according to job reference number:</h2>
@@ -236,12 +239,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <hr>
         <br>
         <br>
-
         <form method="post" action="logout.php">
         <input type="submit" name = "button6" value="Log Out" class="button">
+        </form>
     
         </fieldset>
         </div>
+
+
       
 
 

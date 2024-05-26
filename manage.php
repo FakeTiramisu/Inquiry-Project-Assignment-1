@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Management" />
-    <meta name="keywords" content="HTML, CSS, PHP" />
-    <meta name="author" content="nits" />
-    <title>Job Application Management</title>
-    <link href="styles/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="Careers Management Portal | YNC Finance Group">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author"   content="Charmaigne Mamaril">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Careers Management Portal| YNC Finance Group</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 <?php

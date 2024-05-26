@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '<div class="container2">';
     echo '<h1>Manager Query Results</h1>';
     echo '<form action="manage.php" method="post">';
-    echo '<button type="submit" class="return-button">Return</button>';
+    echo '<button type="submit" class="button">Return</button>';
     echo '</form>';
     require_once("settings.php");
 
@@ -101,12 +101,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_close($stmt);
     }
 
-    if (isset($_POST["button3"]) && isset($_POST["Fname"]) && isset($_POST["Lname"])) {
+    if (isset($_POST["button3"])) {
         $Fname = sanitise_input($_POST["Fname"]);
         $Lname = sanitise_input($_POST["Lname"]);
-        $query = "SELECT * FROM eoi WHERE First_name = ? AND Last_name = ?";
-        $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "ss", $Fname, $Lname);
+        
+        if (!empty($Fname) && !empty($Lname)) {
+            $query = "SELECT * FROM eoi WHERE First_name = ? AND Last_name = ?";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "ss", $Fname, $Lname);
+        } elseif (!empty($Fname)) {
+            $query = "SELECT * FROM eoi WHERE First_name = ?";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "s", $Fname);
+        } elseif (!empty($Lname)) {
+            $query = "SELECT * FROM eoi WHERE Last_name = ?";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "s", $Lname);
+        } else {
+            echo '<p>Please enter at least a first name or last name.</p>';
+            exit();
+        }
+        
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if ($result) {
@@ -188,18 +203,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <h2>List all EOIs:</h2>
             <form method="post" action="manage.php">
-            <input type="submit" name="button1" value="List all EOI"/>
+            <input type="submit" name="button1" value="List all EOI" class="button"/>
             </form>
         <hr>
 
         
-        <h3>List according to job reference number:</h3>
+        <h2>List according to job reference number:</h2>
         <form method="post" action="manage.php">
             <p><label for="jID">Job reference number</label><br><br>
 
             <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Enter Job Ref. Number" required pattern="#[A-Z]{2}[0-9]{2}" />
             <br><br>
-            <input type="submit" name="button2" value="List all EOI for Reference number"/>
+            <input type="submit" name="button2" value="List all EOI for Reference number" class="button"/>
 
             
         </form>
@@ -207,24 +222,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         
-        <h3>List EOIs by applicant name:</h3>
+        <h2>List EOIs by applicant name:</h2>
             <form method="post" action="manage.php">
                 <p><label for="Fname">First name:</label>
-                <input type="text" name="Fname" id="Fname" pattern="[A-Za-z]+" maxlength="20" required/>
+                <input type="text" name="Fname" id="Fname" pattern="[A-Za-z]+" maxlength="20"/>
                 <label for="Lname">Last name:</label>
-                <input type="text" name="Lname" id="Lname" pattern="[A-Za-z]+" maxlength="20" required/>
+                <input type="text" name="Lname" id="Lname" pattern="[A-Za-z]+" maxlength="20"/>
                 <br><br>
-                <input type="submit" name="button3" value="List all EOIs for this applicant">
+                <input type="submit" name="button3" value="List all EOIs for this applicant" class="button">
             </form>
         <br> 
         <br> 
         <hr>
         <br>
         <br>
-        <a class="button" href="logout.php"> Log Out</a>
+
+        <form method="post" action="logout.php">
+        <input type="submit" name = "button6" value="Log Out" class="button">
+    
         </fieldset>
         </div>
-
       
 
 
@@ -235,19 +252,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Delete all EOIs for job reference number</h2>
             <form method="post" action="manage.php">
                 <p><label for="jID">Job reference number</label> <br><br>
-                <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Must be valid Job number" required pattern="#[A-Z]{2}[0-9]{2}" />
+                <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Enter Job Ref. Number" required pattern="#[A-Z]{2}[0-9]{2}" />
                 <br><br>
-                <input type="submit" name="button4" value="Delete all EOIs for Reference number"/>
+                <input type="submit" name="button4" value="Delete all EOIs for Reference number" class="button"/>
             </form>
         <hr>
     
 
     
-            <h3>Change status of an EOI</h3>
+            <h2>Change status of an EOI</h2>
             <form method="post" action="manage.php">
-                <p><label for="EOInumber">EOI number</label>
+                <p><label for="EOInumber">EOI number</label><br>
                 <input type="text" name="EOInumber" id="EOInumber" required pattern="[0-9]+" />
-                <p><label for="status">Status:</label>
+                <p><label for="status">EOI Status:</label>
+                <br>
                 <select name="status" id="status" required>
                     <option value="">Select status</option>
                     <option value="New">New</option>
@@ -255,7 +273,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="Accepted">Accepted</option>
                     <option value="Rejected">Rejected</option>
                 </select>
-                <input type="submit" name="button5" value="Change status">
+                <br> 
+                <br>
+                <input type="submit" name="button5" value="Change status" class="button">
             </form>
 
        

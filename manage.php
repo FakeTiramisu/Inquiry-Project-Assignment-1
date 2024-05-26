@@ -175,8 +175,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "</div>";
 } else {
     echo '
-    <div class="container">
-        <h1>Manager Query</h1>
+    
+    <div class ="jobs_container">
+    <div class="jobs_header">
+    <h1 class="jobs_headertitle">Careers Management Portal</h1>
+    </div>
+        <div class="jobs_sidepanel">
+        <h1 class="jobs_title">Portal Search</h1>
         <fieldset>
             <legend>List all EOIs:</legend>
             <form method="post" action="manage.php">
@@ -185,24 +190,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </fieldset>
 
         <fieldset>
-            <legend>List according to job reference number:</legend>
-            <form method="post" action="manage.php">
-                <p><label for="jID">Job reference number</label>
-                <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Must be valid Job number" required pattern="#[A-Z]{2}[0-9]{2}" />
-                <input type="submit" name="button2" value="List all EOI for Reference number"/>
-            </form>
-        </fieldset>
+        <legend>List according to job reference number:</legend>
+        <form method="post" action="manage.php">
+            <p><label for="jID">Job reference number</label>
+            <input type="text" name="jID" id="jID" minlength="0" maxlength="5" placeholder="Must be valid Job number" required pattern="#[A-Z]{2}[0-9]{2}" />
+            <input type="submit" name="button2" value="List all EOI for Reference number"/>
+        </form>
+    </fieldset>
 
         <fieldset>
-            <legend>List EOIs for a particular applicant:</legend>
+            <legend>List EOIs by applicant name:</legend>
             <form method="post" action="manage.php">
                 <p><label for="Fname">First name:</label>
                 <input type="text" name="Fname" id="Fname" pattern="[A-Za-z]+" maxlength="20" required/>
-                <p><label for="Lname">Last name:</label>
+                <label for="Lname">Last name:</label>
                 <input type="text" name="Lname" id="Lname" pattern="[A-Za-z]+" maxlength="20" required/>
+                <br><br>
                 <input type="submit" name="button3" value="List all EOIs for this applicant">
             </form>
         </fieldset>
+
+         <fieldset>
+            <legend>Logout</legend>
+            <form method="post" action="manage.php">
+                <input type="submit" name="button6" value="Logout">
+            </form>
+        </fieldset>
+        </div>
+
+      
+
+
+        <div class="jobs_mainpanel">
+        <h1 class="jobs_title">Update EOI panel</h1>
+        
+        
 
         <fieldset>
             <legend>Delete all EOIs for job reference number:</legend>
@@ -230,12 +252,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </fieldset>
 
-        <fieldset>
-            <legend>Logout</legend>
-            <form method="post" action="manage.php">
-                <input type="submit" name="button6" value="Logout">
-            </form>
-        </fieldset>
+       
+    </div>
     </div>
     ';
 }

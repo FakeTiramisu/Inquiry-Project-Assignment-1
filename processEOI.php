@@ -164,10 +164,10 @@
         $errMsg .= "<p>Reference Number: Only 5-digit alphanum allowed</p>";
     }
     if(!preg_match("/^[a-zA-Z]{1,20}$/", $firstname)){
-        $errMsg .= "<p>Firstname: Only 20 characters allowed</p>";
+        $errMsg .= "<p>Firstname: Only 20 alphabetic-letters allowed</p>";
     }
     if(!preg_match("/^[a-zA-Z]{1,20}$/", $lastname)){
-        $errMsg .= "<p>Lastname: Only 20 characters allowed</p>";
+        $errMsg .= "<p>Lastname: Only 20 alphabetic-letters allowed</p>";
     }
     //Calculate Age
     $thisYear = date("Y");
@@ -207,12 +207,12 @@
         $errMsg .= "<p>Invalid phone number</p>";
     }
     if($skills != "" && $otherSkills == ""){
-        $errMsg .= "<p>Skills: Required</p>";
+        $errMsg .= "<p>Other Skills: Required</p>";
     }
-
     //Check whether there any error messages
     if($errMsg!="") {
         echo"<p>$errMsg</p>";
+        echo "<p>Please go back to Application Page to submit the form again.</p>";
     }
     else{
         echo "<p>Thank you $firstname $lastname, your booking has been confirmed! <br>
@@ -224,37 +224,36 @@
         Email: $email <br>
         Contact Number: $phone <br>
         Skills: $skills <br>
-        Other Skills: $otherSkills  </p>";                  
-    }
-    ?>
+        Other Skills: $otherSkills  </p>"; 
 
-    <!-- Database Integration -->
-    <?php
-    require_once("settings.php");
-    $conn = @mysqli_connect($host, $user,$pwd,$sql_db);
-    //Check if connection is successful
-    if($conn){ 
-        $sql_table = "eoi";
-        //SQL command
-        $query = "INSERT INTO `eoi`(`Job_Reference_number`, `First_name`, `Last_name`, `Date_of_birth`, `Gender`, `Street_address`, `Suburb_town`, `State`, `Postcode`, `Email_address`, `Phone_number`, `Skills`, `Other_skills`) 
-        VALUES ('$refNum','$firstname','$lastname','$dob','$gender','$address','$suburb','$state','$postcode','$email','$phone','$skills','$otherSkills')";
-        
-        //execute query and store result pointer
-        $result = mysqli_query($conn, $query);
+        //Database Integration 
+        require_once("settings.php");
+        $conn = @mysqli_connect($host, $user,$pwd,$sql_db);
+            //Check if connection is successful
+        if($conn){ 
+            //SQL command
+            $query = "INSERT INTO `eoi`(`Job_Reference_number`, `First_name`, `Last_name`, `Date_of_birth`, `Gender`, `Street_address`, `Suburb_town`, `State`, `Postcode`, `Email_address`, `Phone_number`, `Skills`, `Other_skills`) 
+            VALUES ('$refNum','$firstname','$lastname','$dob','$gender','$address','$suburb','$state','$postcode','$email','$phone','$skills','$otherSkills')";
             
-        //Check if execution successful
-        if(!$result) {
-            echo "<p class=\"wrong\">Somethin is wrong with ", $query, "</p>";
+            //execute query and store result pointer
+            $result = mysqli_query($conn, $query);
+                
+            //Check if execution successful
+            if(!$result) {
+                //echo "<p class=\"wrong\">Somethin is wrong with ", $query, "</p>";
+                echo "<p>Confirmation unsuccessful. Please try again.</p>";
+            } else{
+                //Display the retrieved records
+                //echo "<p class=\"ok\">Succesfully added New Card record</p>";
+                echo "<p>Confirmation Successful. Thank you!</p>";
+            }
+            //Close database connection
+            mysqli_close($conn);
         } else{
-            //Display the retrieved records
-            echo "<p class=\"ok\">Succesfully added New Card record</p>";
-        }
-        //Close database connection
-        mysqli_close($conn);
-    } else{
-        //Display error message
-        die ("<p>Database connection failure</p>") ; 
+            //Display error message
+            die ("<p>Database connection failure</p>") ; 
+        }                  
     }
     ?>
-</body>
+    </body>
 </html>

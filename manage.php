@@ -18,7 +18,6 @@ function sanitise_input($data) {
 
 session_start();
 include("header.inc");
-include("menu.inc");
 
 if (!isset($_SESSION["login"])) {
     header("location: login.php");

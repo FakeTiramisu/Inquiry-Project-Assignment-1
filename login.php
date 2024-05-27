@@ -14,7 +14,6 @@
 <?php
 session_start();
 include("header.inc");
-include("menu.inc");
 require_once("settings.php");
 
 

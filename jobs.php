@@ -36,6 +36,9 @@
         <h3>Initiatives for financial inclusion, sustainability, and community engagement, underscore YNC's dedication to making a positive impact on society.</h3>
         <br>
         <br>
+
+        <h4> For existing employees, sign into management portal here </h4>
+        <a class="button" href="manage.php"> Career Management Portal</a>
         
         
      </div>

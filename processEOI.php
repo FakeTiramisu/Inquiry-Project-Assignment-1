@@ -212,8 +212,9 @@
     }
     //Check whether there any error messages
     if($errMsg!="") {
+        echo "<h2>Input Error:</h2>";
         echo"<p>$errMsg</p>";
-        echo "<p>Please go back to Application Page to submit the form again.</p>";
+        echo "<p>Please go back to Application Page to make changes.</p>";
     }
     else{
         //Database Integration 

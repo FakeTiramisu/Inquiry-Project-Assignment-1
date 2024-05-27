@@ -23,7 +23,6 @@
     //Job Reference Number
     if(isset($_POST["reference"])){
         $refNum = $_POST["reference"];
-        echo"<p>This is a test: Your ref number is $refNum</p>";
     }
     else{
         $errMsg = "Reference Number is required.";
@@ -33,7 +32,6 @@
     //Firstname
     if(isset($_POST["firstname"])){
         $firstname = $_POST["firstname"];
-        echo"<p>This is a test: Your firstname is $firstname</p>";
     }
     else{
         $errMsg = "Firstname is required.";
@@ -43,7 +41,6 @@
     //Lastname
     if(isset($_POST["lastname"])){
         $lastname = $_POST["lastname"];
-        echo"<p>This is a test: Your last name is $lastname</p>";
     }
     else{
         $errMsg = "Lastname is required.";
@@ -53,7 +50,6 @@
     //Date of Birth
     if(isset($_POST["dateofbirth"])){
         $dob = $_POST["dateofbirth"];
-        echo"<p>This is a test: Your date of birth is $dob</p>";
     }
     else{
         $errMsg = "Date of Birth is required.";
@@ -63,7 +59,6 @@
     //Gender
     if(isset($_POST["gender"])){
         $gender = $_POST["gender"];
-        echo"<p>This is a test: Your gender is $gender</p>";
     }
     else{
         $errMsg = "Gender is required.";
@@ -73,7 +68,6 @@
     //Address
     if(isset($_POST["address"])){
         $address = $_POST["address"];
-        echo"<p>This is a test: Your address is $address</p>";
     }
     else{
         $errMsg = "Address is required.";
@@ -83,7 +77,6 @@
     //Suburb
     if(isset($_POST["suburb"])){
         $suburb = $_POST["suburb"];
-        echo"<p>This is a test: Your suburb is $suburb</p>";
     }
     else{
         $errMsg = "Suburb is required.";
@@ -93,7 +86,6 @@
     //State
     if(isset($_POST["state"])){
         $state = $_POST["state"];
-        echo"<p>This is a test: Your state is $state</p>";
     }
     else{
         $errMsg = "State is required.";
@@ -103,7 +95,6 @@
     //Postcode
     if(isset($_POST["postcode"])){
         $postcode = $_POST["postcode"];
-        echo"<p>This is a test: Your postcode is $postcode</p>";
     }
     else{
         $errMsg = "Postcode is required.";
@@ -112,7 +103,6 @@
     //Email
     if(isset($_POST["email"])){
         $email = $_POST["email"];
-        echo"<p>This is a test: Your email is $email</p>";
     }
     else{
         $errMsg = "Email is required.";
@@ -121,15 +111,14 @@
     //Phone
     if(isset($_POST["phone"])){
         $phone = $_POST["phone"];
-        echo"<p>This is a test: Your phone is $phone</p>";
     }
     else{
         $errMsg = "Phone is required.";
         header("location: apply.php");  
     }
     //Skills
-    $skill="";
-    if(isset($_POST["skills1"])) $skills .= "Problem Solving, ";
+    $skills="";
+    if(isset($_POST["skills1"])) $skills = $skills ."Problem Solving, ";
     if(isset($_POST["skills2"])) {
         $skills .= "Teamwork, ";
     }
@@ -143,7 +132,6 @@
     //Other Skills
     if(isset($_POST["OSkills"])){
         $otherSkills = $_POST["OSkills"];
-        echo"<p>This is a test: Your other skills is/are $otherSkills</p>";
     }
     else{
         $errMsg = "Other Skill is required.";
@@ -173,50 +161,53 @@
 
     //Format Validation
     if(!preg_match("/^[a-zA-Z0-9]{5}$/", $refNum)){
-        $errMsg = "Only 5-digit alphanum allowed";
+        $errMsg .= "<p>Reference Number: Only 5-digit alphanum allowed</p>";
     }
-    if(!preg_match("/^[a-zA-Z]{20}$/", $firstname)){
-        $errMsg = "Only 20 characters allowed";
+    if(!preg_match("/^[a-zA-Z]{1,20}$/", $firstname)){
+        $errMsg .= "<p>Firstname: Only 20 characters allowed</p>";
     }
-    if(!preg_match("/^[a-zA-Z]{20}$/", $lastname)){
-        $errMsg = "Only 20 characters allowed";
+    if(!preg_match("/^[a-zA-Z]{1,20}$/", $lastname)){
+        $errMsg .= "<p>Lastname: Only 20 characters allowed</p>";
     }
     //Calculate Age
     $thisYear = date("Y");
     $thisMonth = date("F");
-    $birthYear = date("Y", $dob);
-    $birthMonth = date("F", $dob);
-    $age = $thisYear-$birthYear;
+    $dob_year = date('Y', strtotime($dob));
+    $dob_month = date('F', strtotime($dob));
+    $age = $thisYear-$dob_year;
     if($age < 15 || $age > 80){
-        if($birthMonth > $thisMonth){
-            $errMsg = "Must be age between 15 to 80";
+        if($dob_month > $thisMonth){
+            $errMsg .= "<p>Must be age between 15 to 80</p>";
         }
     }
     if($gender==""){
-        $errMsg = "Gender is required";
+        $errMsg .= "<p>Gender is required</p>";
     }
     if(!preg_match("/^[a-zA-Z0-9-\/ ]{1,40}$/", $address)){
-        $errMsg = "Invalid address";
+        $errMsg .= "<p>Invalid address</p>";
     }
     if(!preg_match("/^[a-zA-Z0-9-\/ ]{1,40}$/", $suburb)){
-        $errMsg = "Invalid suburb";
+        $errMsg .= "<p>Invalid suburb</p>";
     }
+    
+    //Create an array of states
+    $stateArray = array("VIC", "NSW", "QLD", "NT", "WA", "SA", "TAS", "ACT");
+
     //State and postcode matching
-    if($state != "VIC" || $state != "NSW" || $state != "QLD" || $state != "NT" || 
-    $state != "WA" || $state != "SA" || $state != "TAS" || $state != "ACT") {
-        $errMsg = "Invalid state";
+    if(!(in_array($state, $stateArray))) {
+        $errMsg .= "<p>Invalid state</p>";
     }
     if(!preg_match("/^[\d]{4}$/", $postcode)){
-        $errMsg = "Invalid postcode";
+        $errMsg .= "<p>Invalid postcode</p>";
     }
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-        $errMsg = "Invalid email";
+        $errMsg .= "<p>Invalid email</p>";
     }
     if(!preg_match("/^[0-9 ]{8,12}$/", $phone)){
-        $errMsg = "Invalid suburb";
+        $errMsg .= "<p>Invalid phone number</p>";
     }
     if($skills != "" && $otherSkills == ""){
-        $errMsg = "Required";
+        $errMsg .= "<p>Skills: Required</p>";
     }
 
     //Check whether there any error messages
@@ -233,10 +224,37 @@
         Email: $email <br>
         Contact Number: $phone <br>
         Skills: $skills <br>
-        Other Skills: $otherSkills <br>
-        Number of Travellers: $partySize</p>";                  
+        Other Skills: $otherSkills  </p>";                  
     }
     ?>
 
+    <!-- Database Integration -->
+    <?php
+    require_once("settings.php");
+    $conn = @mysqli_connect($host, $user,$pwd,$sql_db);
+    //Check if connection is successful
+    if($conn){ 
+        $sql_table = "eoi";
+        //SQL command
+        $query = "INSERT INTO `eoi`(`Job_Reference_number`, `First_name`, `Last_name`, `Date_of_birth`, `Gender`, `Street_address`, `Suburb_town`, `State`, `Postcode`, `Email_address`, `Phone_number`, `Skills`, `Other_skills`) 
+        VALUES ('$refNum','$firstname','$lastname','$dob','$gender','$address','$suburb','$state','$postcode','$email','$phone','$skills','$otherSkills')";
+        
+        //execute query and store result pointer
+        $result = mysqli_query($conn, $query);
+            
+        //Check if execution successful
+        if(!$result) {
+            echo "<p class=\"wrong\">Somethin is wrong with ", $query, "</p>";
+        } else{
+            //Display the retrieved records
+            echo "<p class=\"ok\">Succesfully added New Card record</p>";
+        }
+        //Close database connection
+        mysqli_close($conn);
+    } else{
+        //Display error message
+        die ("<p>Database connection failure</p>") ; 
+    }
+    ?>
 </body>
 </html>

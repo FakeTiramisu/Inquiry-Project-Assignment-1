@@ -396,7 +396,6 @@ legend{
 }
 
 /* JOB PAGE */
-.error{color: #FF0000;}
 .jobs_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px,1fr));

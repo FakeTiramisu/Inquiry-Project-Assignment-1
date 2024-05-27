@@ -11,6 +11,7 @@
     <title>Application Confirmation</title>
 </head>
 <body>
+    <main>
     <h1>Application Confirmation</h1>
     <!-- Process PHP file -->
     <?php
@@ -215,17 +216,6 @@
         echo "<p>Please go back to Application Page to submit the form again.</p>";
     }
     else{
-        echo "<p>Thank you $firstname $lastname, your booking has been confirmed! <br>
-        Below are your application details: <br>
-        Reference #$refNum <br>
-        DOB: $dob <br>
-        Gender: $gender <br>
-        Address: $address $suburb, $state, $postcode <br>
-        Email: $email <br>
-        Contact Number: $phone <br>
-        Skills: $skills <br>
-        Other Skills: $otherSkills  </p>"; 
-
         //Database Integration 
         require_once("settings.php");
         $conn = @mysqli_connect($host, $user,$pwd,$sql_db);
@@ -247,6 +237,26 @@
                 //echo "<p class=\"ok\">Succesfully added New Card record</p>";
                 echo "<p>Confirmation Successful. Thank you!</p>";
             }
+
+            //Output Unique EOI number
+            $query = "SELECT EOInumber FROM `eoi` WHERE Job_Reference_number='$refNum'";
+            $result = mysqli_query($conn, $query);
+            if($result){
+                $result=mysqli_fetch_assoc($result);
+                echo "<p>EOI Number: ".$result["EOInumber"]."</p>";
+            }
+            //Application details
+            echo "<p>Job Application for \"$firstname $lastname\".<br>
+            <br>
+            Below are your application details: <br>
+            Reference #$refNum <br>
+            DOB: $dob <br>
+            Gender: $gender <br>
+            Address: $address $suburb, $state, $postcode <br>
+            Email: $email <br>
+            Contact Number: $phone <br>
+            Skills: $skills <br>
+            Other Skills: $otherSkills  </p>"; 
             //Close database connection
             mysqli_close($conn);
         } else{
@@ -255,5 +265,6 @@
         }                  
     }
     ?>
+    </main>
     </body>
 </html>

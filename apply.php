@@ -15,18 +15,18 @@
     <div class="fieldset-content">
     <fieldset class="fieldset_main">
         <legend>Job application page</legend>
-    <form id="application" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php"> 
+    <form id="application" method="post" action="processEOI.php" novalidate="novalidate">
         <p><label for="Rnumber">Job reference number</label>
             <input type="text" name="reference" id="Rnumber" minlength="5" maxlength="5" size="5" required="required" />
         </p>
         <p><label for="Fname">First name
-            <input type="text" name="first name" id="Fname" maxlength="20" required="required" pattern="[a-zA-Z]+"/>
+            <input type="text" name="firstname" id="Fname" maxlength="20" required="required" pattern="[a-zA-Z]+"/>
         </label></p>
         <p><label for="Lname">Last name
-            <input type="text" name="last name" id="Lname" maxlength="20" required="required" pattern="[a-zA-Z]+"/>
+            <input type="text" name="lastname" id="Lname" maxlength="20" required="required" pattern="[a-zA-Z]+"/>
         </label></p>
         <p><label for="DOB">Date of birth
-            <input type="date" name="date of birth" id="DOB" required="required" />
+            <input type="date" name="dateofbirth" id="DOB" required="required" />
         </label></p>
         <fieldset class="fieldset_gender">
             <legend>Gender:</legend>
@@ -59,13 +59,13 @@
             </select>
         </label></p>
         <p><label for="Postcode">Postcode
-            <input type="text" name="postcode" id="Postcode" minlength="4" maxlength="4" required="required" />
+            <input type="text" name="postcode" id="Postcode" pattern="\d{4}" maxlength="4" required="required" />
         </label></p>
         <p><label for="Email">Email address
             <input type="email" name="email" id="Email" placeholder="Enter your email" required="required"/>
         </label></p>
         <p><label for="Phone">Phone number
-            <input type="tel" name="phone" id="Phone" minlength="8" maxlength="12" required="required"/>
+            <input type="tel" name="phone" id="Phone" pattern="[0-9]{8,10}" maxlength=10 required="required"/>
         </label></p>
         <p class="skill_list">Skill list <br/>
             <label for="skill1"><input type="checkbox" name="skills1" id="skill1" value="PS" required="required"/>Problem Solving</label>
